@@ -1,0 +1,135 @@
+.header {
+  background-color: #0d0d0d;
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 768px;
+  width: 100%;
+
+  margin: 0 auto;
+  margin-top: -27px;
+  padding: 0 16px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form input {
+  flex: 1;
+
+  padding: 16px;
+
+  font-size: 16px;
+  color: #808080;
+
+  background-color: #262626;
+  border: 1px solid #0d0d0d;
+  border-radius: 8px;
+}
+
+.form input::placeholder {
+  color: #808080;
+}
+
+.form input:focus {
+  border-color: #1e6f9f;
+}
+
+.form button {
+  padding: 16px;
+
+  font-size: 14px;
+  font-weight: 700;
+  color: #f2f2f2;
+
+  background-color: #1e6f9f;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.form button:hover {
+  filter: brightness(0.8);
+}
+
+.tasksHeader {
+  margin-top: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tasksHeader div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tasksHeader div strong {
+  font-size: 14px;
+}
+
+.tasksHeader div strong {
+  color: #4ea8de;
+}
+
+.tasksHeader div + div strong {
+  color: #8284fa;
+}
+
+.tasksHeader div span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #d9d9d9;
+
+  background-color: #333333;
+  border-radius: 9999px;
+
+  padding: 2px 8px;
+}
+
+.emptyList {
+  margin-top: 24px;
+  padding-top: 64px;
+
+  border-top: 1px solid #333333;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.emptyList strong {
+  margin-top: 16px;
+
+  font-size: 16px;
+  color: #808080;
+}
+
+.emptyList span {
+  margin-top: 4px;
+  color: #808080;
+}
+
+@media (max-width: 600px) {
+  .form button {
+    gap: 0;
+    font-size: 0;
+  }
+}
