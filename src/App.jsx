@@ -1,16 +1,15 @@
 import { PlusCircle, Trash } from "phosphor-react";
 
+import { Header } from "./components/Header";
+
 import styles from "./styles/App.module.css";
 
-import Logo from "./assets/logo.svg";
 import Clipboard from "./assets/clipboard.svg";
 
 export function App() {
   return (
     <>
-      <header className={styles.header}>
-        <img src={Logo} alt="Logo da aplicação" />
-      </header>
+      <Header />
 
       <div className={styles.container}>
         <form className={styles.form}>
