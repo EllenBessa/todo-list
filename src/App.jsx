@@ -1,10 +1,9 @@
-import { Trash } from "phosphor-react";
-
 import { Header } from "./components/Header";
 import { CreateTaskForm } from "./components/CreateTaskForm";
 import { EmptyListFeedback } from "./components/EmptyListFeedback";
 
 import styles from "./styles/App.module.css";
+import { TaskCard } from "./components/TaskCard";
 
 export function App() {
   return (
@@ -30,61 +29,7 @@ export function App() {
           {/* <EmptyListFeedback /> */}
 
           <section className={styles.tasksList}>
-            <div className={styles.taskCard}>
-              <input type="checkbox" />
-
-              <span>
-                Integer urna interdum massa libero auctor neque turpis turpis
-                semper. Duis vel sed fames integer. semper. Duis vel sed fames
-                integer.
-              </span>
-
-              <button>
-                <Trash size={18} color="#808080" />
-              </button>
-            </div>
-
-            <div className={styles.taskCard}>
-              <input type="checkbox" />
-
-              <span>
-                Integer urna interdum massa libero auctor neque turpis turpis
-                semper. Duis vel sed fames integer. semper. Duis vel sed fames
-                integer.
-              </span>
-
-              <button>
-                <Trash size={18} color="#808080" />
-              </button>
-            </div>
-
-            <div className={styles.taskCard}>
-              <input type="checkbox" />
-
-              <span>
-                Integer urna interdum massa libero auctor neque turpis turpis
-                semper. Duis vel sed fames integer. semper. Duis vel sed fames
-                integer.
-              </span>
-
-              <button>
-                <Trash size={18} color="#808080" />
-              </button>
-            </div>
-
-            <div className={styles.taskCard}>
-              <input type="checkbox" />
-
-              <span>
-                Integer urna interdum massa libero auctor neque turpis turpis
-                semper. Duis vel sed fames integer. semper. Duis vel sed fames
-                integer.
-              </span>
-
-              <button>
-                <Trash size={18} color="#808080" />
-              </button>
-            </div>
+            <TaskCard />
           </section>
         </main>
       </div>
