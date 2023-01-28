@@ -29,7 +29,8 @@ export function App() {
           {/* <EmptyListFeedback /> */}
 
           <section className={styles.tasksList}>
-            <TaskCard />
+            <TaskCard text="Oi" />
+            <TaskCard text="Remi" />
           </section>
         </main>
       </div>
