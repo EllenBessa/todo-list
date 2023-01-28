@@ -1,4 +1,4 @@
-import { PlusCircle } from "phosphor-react";
+import { PlusCircle, Trash } from "phosphor-react";
 
 import styles from "./styles/App.module.css";
 
@@ -34,11 +34,69 @@ export function App() {
             </div>
           </header>
 
-          <section className={styles.emptyList}>
+          {/* <section className={styles.emptyList}>
             <img src={Clipboard} alt="" />
 
             <strong>Você ainda não tem tarefas cadastradas</strong>
             <span>Crie tarefas e organize seus itens a fazer</span>
+          </section> */}
+
+          <section className={styles.tasksList}>
+            <div className={styles.taskCard}>
+              <input type="checkbox" />
+
+              <span>
+                Integer urna interdum massa libero auctor neque turpis turpis
+                semper. Duis vel sed fames integer. semper. Duis vel sed fames
+                integer.
+              </span>
+
+              <button>
+                <Trash size={18} color="#808080" />
+              </button>
+            </div>
+
+            <div className={styles.taskCard}>
+              <input type="checkbox" />
+
+              <span>
+                Integer urna interdum massa libero auctor neque turpis turpis
+                semper. Duis vel sed fames integer. semper. Duis vel sed fames
+                integer.
+              </span>
+
+              <button>
+                <Trash size={18} color="#808080" />
+              </button>
+            </div>
+
+            <div className={styles.taskCard}>
+              <input type="checkbox" />
+
+              <span>
+                Integer urna interdum massa libero auctor neque turpis turpis
+                semper. Duis vel sed fames integer. semper. Duis vel sed fames
+                integer.
+              </span>
+
+              <button>
+                <Trash size={18} color="#808080" />
+              </button>
+            </div>
+
+            <div className={styles.taskCard}>
+              <input type="checkbox" />
+
+              <span>
+                Integer urna interdum massa libero auctor neque turpis turpis
+                semper. Duis vel sed fames integer. semper. Duis vel sed fames
+                integer.
+              </span>
+
+              <button>
+                <Trash size={18} color="#808080" />
+              </button>
+            </div>
           </section>
         </main>
       </div>
