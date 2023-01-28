@@ -1,11 +1,10 @@
 import { Trash } from "phosphor-react";
 
 import { Header } from "./components/Header";
+import { CreateTaskForm } from "./components/CreateTaskForm";
+import { EmptyListFeedback } from "./components/EmptyListFeedback";
 
 import styles from "./styles/App.module.css";
-
-import Clipboard from "./assets/clipboard.svg";
-import { CreateTaskForm } from "./components/CreateTaskForm";
 
 export function App() {
   return (
@@ -28,12 +27,7 @@ export function App() {
             </div>
           </header>
 
-          {/* <section className={styles.emptyList}>
-            <img src={Clipboard} alt="" />
-
-            <strong>Você ainda não tem tarefas cadastradas</strong>
-            <span>Crie tarefas e organize seus itens a fazer</span>
-          </section> */}
+          {/* <EmptyListFeedback /> */}
 
           <section className={styles.tasksList}>
             <div className={styles.taskCard}>

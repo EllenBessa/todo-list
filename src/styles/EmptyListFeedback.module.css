@@ -1,0 +1,24 @@
+.emptyList {
+  margin-top: 24px;
+  padding-top: 64px;
+
+  border-top: 1px solid #333333;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.emptyList strong {
+  margin-top: 16px;
+
+  font-size: 16px;
+  color: #808080;
+}
+
+.emptyList span {
+  margin-top: 4px;
+  color: #808080;
+}
