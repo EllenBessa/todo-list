@@ -31,6 +31,7 @@ export function CreateTaskForm({ onCreateTask }) {
         placeholder="Adicione uma nova tarefa"
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
+        required
       />
 
       <button>
