@@ -1,17 +1,21 @@
+import { useState } from "react";
+
 import { Header } from "./components/Header";
+import { TaskCard } from "./components/TaskCard";
 import { CreateTaskForm } from "./components/CreateTaskForm";
 import { EmptyListFeedback } from "./components/EmptyListFeedback";
 
 import styles from "./styles/App.module.css";
-import { TaskCard } from "./components/TaskCard";
 
 export function App() {
+  const [tasks, setTasks] = useState([]);
+
   return (
     <>
       <Header />
 
       <div className={styles.container}>
-        <CreateTaskForm />
+        <CreateTaskForm onCreateTask={setTasks} />
 
         <main>
           <header className={styles.tasksHeader}>
