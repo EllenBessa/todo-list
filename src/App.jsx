@@ -36,8 +36,9 @@ export function App() {
             <EmptyListFeedback />
           ) : (
             <section className={styles.tasksList}>
-              <TaskCard text="Oi" />
-              <TaskCard text="Remi" />
+              {tasks.map((task) => (
+                <TaskCard key={task.id} text={task.title} />
+              ))}
             </section>
           )}
         </main>
