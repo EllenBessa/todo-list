@@ -10,6 +10,8 @@ import styles from "./styles/App.module.css";
 export function App() {
   const [tasks, setTasks] = useState([]);
 
+  const tasksIsEmpty = tasks.length === 0;
+
   return (
     <>
       <Header />
@@ -30,12 +32,14 @@ export function App() {
             </div>
           </header>
 
-          {/* <EmptyListFeedback /> */}
-
-          <section className={styles.tasksList}>
-            <TaskCard text="Oi" />
-            <TaskCard text="Remi" />
-          </section>
+          {tasksIsEmpty ? (
+            <EmptyListFeedback />
+          ) : (
+            <section className={styles.tasksList}>
+              <TaskCard text="Oi" />
+              <TaskCard text="Remi" />
+            </section>
+          )}
         </main>
       </div>
     </>
