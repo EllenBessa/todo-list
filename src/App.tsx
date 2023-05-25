@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
+import { Button } from "./components/Button";
 
 import "./global.css";
 import styles from "./App.module.css";
@@ -12,6 +13,7 @@ export function App() {
       <main className={styles.wrapper}>
         <form className={styles.form}>
           <Input placeholder="Adicione uma nova tarefa" />
+          <Button />
         </form>
       </main>
     </>
