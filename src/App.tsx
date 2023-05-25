@@ -15,6 +15,20 @@ export function App() {
           <Input placeholder="Adicione uma nova tarefa" />
           <Button />
         </form>
+
+        <section>
+          <header className={styles.taskHeader}>
+            <div>
+              <span>Tarefas criadas</span>
+              <strong>0</strong>
+            </div>
+
+            <div>
+              <span>Concluídas</span>
+              <strong>0</strong>
+            </div>
+          </header>
+        </section>
       </main>
     </>
   );
