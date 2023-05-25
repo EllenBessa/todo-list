@@ -12,4 +12,7 @@
 
 .form {
   margin-top: -28px;
+
+  display: flex;
+  gap: 8px;
 }
