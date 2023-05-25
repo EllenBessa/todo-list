@@ -1,5 +1,6 @@
 .input {
-  min-width: 100%;
+  max-width: 638px;
+  width: 100%;
   padding: 1rem;
 
   background: var(--gray-500);
