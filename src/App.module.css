@@ -3,3 +3,9 @@
     font-size: 87.5%;
   }
 }
+
+.wrapper {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
