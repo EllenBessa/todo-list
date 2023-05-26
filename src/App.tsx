@@ -1,6 +1,7 @@
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
+import { EmptyList } from "./components/EmptyList";
 
 import "./global.css";
 import styles from "./App.module.css";
@@ -28,6 +29,8 @@ export function App() {
               <strong>0</strong>
             </div>
           </header>
+
+          <EmptyList />
         </section>
       </main>
     </>
