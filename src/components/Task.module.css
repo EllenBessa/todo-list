@@ -1,0 +1,66 @@
+.task {
+  margin-top: 1.5rem;
+
+  background: var(--gray-500);
+  padding: 1rem;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.task input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+
+  min-width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+  position: relative;
+}
+
+.task input:checked {
+  background: var(--purple);
+  border-color: var(--purple);
+}
+
+.task input[type="checkbox"]:checked:before {
+  content: "✓";
+
+  color: var(--gray-100);
+
+  position: absolute;
+  top: -2px;
+  right: 2px;
+}
+
+.task input[type="checkbox"]:hover {
+  background: var(--blue-dark);
+}
+
+.task span {
+  color: var(--gray-100);
+  font-size: 0.875rem;
+}
+
+.task:has(input[type="checkbox"]:checked) span {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.task button {
+  all: unset;
+
+  color: var(--gray-300);
+  cursor: pointer;
+}
+
+.task button:hover {
+  color: var(--danger);
+}

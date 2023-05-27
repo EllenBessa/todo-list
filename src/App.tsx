@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import { EmptyList } from "./components/EmptyList";
+import { Task } from "./components/Task";
 
 import "./global.css";
 import styles from "./App.module.css";
@@ -30,7 +31,8 @@ export function App() {
             </div>
           </header>
 
-          <EmptyList />
+          <Task />
+          <Task />
         </section>
       </main>
     </>
