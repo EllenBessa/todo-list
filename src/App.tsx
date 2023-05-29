@@ -3,8 +3,9 @@ import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import { Task } from "./components/Task";
 
-import "./global.css";
 import styles from "./App.module.css";
+
+import "./global.css";
 
 export function App() {
   return (
