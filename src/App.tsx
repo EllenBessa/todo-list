@@ -4,8 +4,8 @@ import { Button } from "./components/Button";
 import { Task } from "./components/Task";
 
 import styles from "./App.module.css";
-
 import "./global.css";
+
 import { ChangeEvent, FormEvent, useState } from "react";
 
 export function App() {
@@ -22,6 +22,14 @@ export function App() {
 
   function handleNewListChange(event: ChangeEvent<HTMLInputElement>) {
     setNewListText(event.target.value);
+  }
+
+  function deleteList(listToDelete: string) {
+    const listWithoutDeletedOne = todoList.filter((list) => {
+      return list !== listToDelete;
+    });
+
+    setTodoList(listWithoutDeletedOne);
   }
 
   return (
@@ -53,7 +61,13 @@ export function App() {
           </header>
 
           {todoList.map((todoList) => {
-            return <Task key={todoList} content={todoList} />;
+            return (
+              <Task
+                key={todoList}
+                content={todoList}
+                onDeleteList={deleteList}
+              />
+            );
           })}
         </section>
       </main>
