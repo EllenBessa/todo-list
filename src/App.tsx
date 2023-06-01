@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import { Task as TaskItem } from "./components/Task";
+import { EmptyList } from "./components/EmptyList";
 
 import styles from "./App.module.css";
 import "./global.css";
@@ -28,6 +29,7 @@ export function App() {
     }
     return acc;
   }, 0);
+  const taskIsEmpty = tasksList.length === 0;
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
@@ -98,18 +100,22 @@ export function App() {
             </div>
           </header>
 
-          {tasksList.map((task) => {
-            return (
-              <TaskItem
-                key={task.id}
-                id={task.id}
-                content={task.content}
-                done={task.done}
-                onDeleteTask={handleDeleteTask}
-                onChangeTaskStatus={handleChangeTaskStatus}
-              />
-            );
-          })}
+          {taskIsEmpty ? (
+            <EmptyList />
+          ) : (
+            tasksList.map((task) => {
+              return (
+                <TaskItem
+                  key={task.id}
+                  id={task.id}
+                  content={task.content}
+                  done={task.done}
+                  onDeleteTask={handleDeleteTask}
+                  onChangeTaskStatus={handleChangeTaskStatus}
+                />
+              );
+            })
+          )}
         </section>
       </main>
     </>
