@@ -13,6 +13,8 @@ export function App() {
 
   const [newListText, setNewListText] = useState("");
 
+  const taskCount = todoList.length;
+
   function handleCreateNewList(event: FormEvent) {
     event.preventDefault();
 
@@ -51,12 +53,12 @@ export function App() {
           <header className={styles.taskHeader}>
             <div>
               <span>Tarefas criadas</span>
-              <strong>0</strong>
+              <strong>{taskCount}</strong>
             </div>
 
             <div>
               <span>Concluídas</span>
-              <strong>0</strong>
+              <strong>0 de {taskCount}</strong>
             </div>
           </header>
 
