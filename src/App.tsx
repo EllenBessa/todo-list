@@ -1,24 +1,38 @@
+import { ChangeEvent, FormEvent, useState } from "react";
+import { v4 as uuidV4 } from "uuid";
+
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
-import { Task } from "./components/Task";
+import { Task as TaskItem } from "./components/Task";
 
 import styles from "./App.module.css";
 import "./global.css";
 
-import { ChangeEvent, FormEvent, useState } from "react";
+interface Task {
+  id: string;
+  content: string;
+  done: boolean;
+}
 
 export function App() {
-  const [todoList, setTodoList] = useState(["Arrumar o quarto"]);
+  const [tasksList, setTasksList] = useState<Task[]>([]);
 
   const [newListText, setNewListText] = useState("");
 
-  const taskCount = todoList.length;
+  const taskCount = tasksList.length;
 
   function handleCreateNewList(event: FormEvent) {
     event.preventDefault();
 
-    setTodoList([...todoList, newListText]);
+    setTasksList([
+      ...tasksList,
+      {
+        id: uuidV4(),
+        content: newListText,
+        done: false
+      }
+    ]);
     setNewListText("");
   }
 
@@ -26,12 +40,12 @@ export function App() {
     setNewListText(event.target.value);
   }
 
-  function deleteList(listToDelete: string) {
-    const listWithoutDeletedOne = todoList.filter((list) => {
-      return list !== listToDelete;
+  function handleDeleteTask(taskId: string) {
+    const listWithoutDeletedOne = tasksList.filter((task) => {
+      return task.id !== taskId;
     });
 
-    setTodoList(listWithoutDeletedOne);
+    setTasksList(listWithoutDeletedOne);
   }
 
   return (
@@ -62,12 +76,14 @@ export function App() {
             </div>
           </header>
 
-          {todoList.map((todoList) => {
+          {tasksList.map((task) => {
             return (
-              <Task
-                key={todoList}
-                content={todoList}
-                onDeleteList={deleteList}
+              <TaskItem
+                key={task.id}
+                id={task.id}
+                content={task.content}
+                done={task.done}
+                onDeleteTask={handleDeleteTask}
               />
             );
           })}

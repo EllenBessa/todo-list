@@ -2,14 +2,16 @@ import { Trash } from "@phosphor-icons/react";
 
 import styles from "./Task.module.css";
 
-interface ListProps {
+interface TaskProps {
+  id: string;
   content: string;
-  onDeleteList: (list: string) => void;
+  done: boolean;
+  onDeleteTask: (taskId: string) => void;
 }
 
-export function Task({ content, onDeleteList }: ListProps) {
-  function handleDeleteList() {
-    onDeleteList(content);
+export function Task({ id, content, done, onDeleteTask }: TaskProps) {
+  function handleDeleteTask() {
+    onDeleteTask(id);
   }
 
   return (
@@ -20,7 +22,7 @@ export function Task({ content, onDeleteList }: ListProps) {
         <span>{content}</span>
       </div>
 
-      <button type="submit" onClick={handleDeleteList}>
+      <button type="submit" onClick={handleDeleteTask}>
         <Trash size={20} />
       </button>
     </div>
