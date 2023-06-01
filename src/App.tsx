@@ -16,7 +16,9 @@ interface Task {
 }
 
 export function App() {
-  const [tasksList, setTasksList] = useState<Task[]>([]);
+  const [tasksList, setTasksList] = useState<Task[]>([
+    { id: uuidV4(), content: "arrumar o quarto", done: true }
+  ]);
   const [newTaskContent, setNewTaskContent] = useState<string>("");
 
   const taskCount = tasksList.length;
@@ -38,6 +40,18 @@ export function App() {
 
   function handleNewTaskContentChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTaskContent(event.target.value);
+  }
+
+  function handleChangeTaskStatus(taskId: string) {
+    const newTaskListWithCompletedTask = tasksList.map((task) => {
+      if (task.id === taskId) {
+        task.done = !task.done;
+      }
+
+      return task;
+    });
+
+    setTasksList(newTaskListWithCompletedTask);
   }
 
   function handleDeleteTask(taskId: string) {
@@ -84,6 +98,7 @@ export function App() {
                 content={task.content}
                 done={task.done}
                 onDeleteTask={handleDeleteTask}
+                onChangeTaskStatus={handleChangeTaskStatus}
               />
             );
           })}
