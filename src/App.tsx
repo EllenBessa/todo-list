@@ -17,27 +17,27 @@ interface Task {
 
 export function App() {
   const [tasksList, setTasksList] = useState<Task[]>([]);
-
-  const [newListText, setNewListText] = useState("");
+  const [newTaskContent, setNewTaskContent] = useState<string>("");
 
   const taskCount = tasksList.length;
 
-  function handleCreateNewList(event: FormEvent) {
+  function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
 
     setTasksList([
       ...tasksList,
       {
         id: uuidV4(),
-        content: newListText,
+        content: newTaskContent,
         done: false
       }
     ]);
-    setNewListText("");
+
+    setNewTaskContent("");
   }
 
-  function handleNewListChange(event: ChangeEvent<HTMLInputElement>) {
-    setNewListText(event.target.value);
+  function handleNewTaskContentChange(event: ChangeEvent<HTMLInputElement>) {
+    setNewTaskContent(event.target.value);
   }
 
   function handleDeleteTask(taskId: string) {
@@ -53,12 +53,12 @@ export function App() {
       <Header />
 
       <main className={styles.wrapper}>
-        <form onSubmit={handleCreateNewList} className={styles.form}>
+        <form onSubmit={handleCreateNewTask} className={styles.form}>
           <Input
             name="list"
             placeholder="Adicione uma nova tarefa"
-            value={newListText}
-            onChange={handleNewListChange}
+            value={newTaskContent}
+            onChange={handleNewTaskContentChange}
           />
           <Button />
         </form>
