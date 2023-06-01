@@ -21,7 +21,13 @@ export function App() {
   ]);
   const [newTaskContent, setNewTaskContent] = useState<string>("");
 
-  const taskCount = tasksList.length;
+  const tasksCount = tasksList.length;
+  const completedTasksCount = tasksList.reduce((acc, task) => {
+    if (task.done) {
+      return acc + 1;
+    }
+    return acc;
+  }, 0);
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
@@ -81,12 +87,14 @@ export function App() {
           <header className={styles.taskHeader}>
             <div>
               <span>Tarefas criadas</span>
-              <strong>{taskCount}</strong>
+              <strong>{tasksCount}</strong>
             </div>
 
             <div>
               <span>Concluídas</span>
-              <strong>0 de {taskCount}</strong>
+              <strong>
+                {completedTasksCount} de {tasksCount}
+              </strong>
             </div>
           </header>
 
