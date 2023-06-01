@@ -16,7 +16,9 @@ export function Task({ content, onDeleteList }: ListProps) {
     <div className={styles.task}>
       <input type="checkbox" />
 
-      <span>{content}</span>
+      <div className={styles.taskContent}>
+        <span>{content}</span>
+      </div>
 
       <button type="submit" onClick={handleDeleteList}>
         <Trash size={20} />
